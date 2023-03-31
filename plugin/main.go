@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
-	accessv1 "github.com/kostyay/grpc-api-gateway-example/protos/access/v1"
+	pb "github.com/kostyay/protoc-gen-go-private/private/v1"
 	"google.golang.org/protobuf/compiler/protogen"
 )
 
@@ -34,7 +34,7 @@ func generateMessage(message *protogen.Message) {
 
 }
 
-func getPrivateOption(field *protogen.Field) *accessv1.FieldOption {
+func getPrivateOption(field *protogen.Field) *pb.FieldOption {
 	if !field.Desc.IsExtension() {
 		return nil
 	}
