@@ -1,3 +1,7 @@
+.PHONY: dependencies
+dependencies:
+	./scripts/dependencies.sh
+
 .PHONY: build
 build:
 	@buf generate && go build -o ./bin/protoc-gen-go-private ./plugin/...
@@ -6,9 +10,8 @@ build:
 clean:
 	@rm -rf ./bin
 
-
 .PHONY: test
-test: build
+test:  dependencies build
 	@./scripts/test.sh
 
 .PHONY: fmt
