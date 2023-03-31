@@ -10,3 +10,7 @@ clean:
 .PHONY: test
 test: build
 	@./scripts/test.sh
+
+.PHONY: fmt
+fmt:
+	@go fmt ./...

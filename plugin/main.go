@@ -69,8 +69,8 @@ func generateMessage(g *protogen.GeneratedFile, msg *protogen.Message) {
 
 		if field.Desc.Kind() == protoreflect.MessageKind {
 			g.P(fmt.Sprintf("if p, ok := interface{}(x.Get%s()).(types.AsPublic); ok {", field.GoName))
-			g.P(fmt.Sprintf("p.AsPublic()"))
-			g.P(fmt.Sprintf("}"))
+			g.P("p.AsPublic()")
+			g.P("}")
 		}
 
 	}
