@@ -5,3 +5,8 @@ build:
 .PHONY: clean
 clean:
 	@rm -rf ./bin
+
+
+.PHONY: test
+test: build
+	@./scripts/test.sh

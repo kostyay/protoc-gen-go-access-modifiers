@@ -47,6 +47,6 @@ jobs:
           go-version: '1.19'
           cache: false
       - uses: actions/checkout@v3
-      - name: build
+      - name: build test
         run: |
-          make build
+          make test
