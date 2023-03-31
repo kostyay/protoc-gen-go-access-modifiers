@@ -4,7 +4,7 @@ package private.v1;
 
 import "google/protobuf/descriptor.proto";
 
-option go_package = "github.com/kostyay/protoc-gen-go-private/private/v1;privatev1";
+option go_package = "github.com/kostyay/protoc-gen-go-private/pkg/private/v1;privatev1";
 
 // MethodOption authorization rule for endpoint
 message FieldOption {

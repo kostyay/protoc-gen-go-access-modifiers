@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	pb "github.com/kostyay/protoc-gen-go-private/private/v1"
+	pb "github.com/kostyay/protoc-gen-go-private/pkg/private/v1"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"log"
