@@ -1,0 +1,8 @@
+version: v1
+name: buf.build/kostyao/protoc-gen-go-private
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
