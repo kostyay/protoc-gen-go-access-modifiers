@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package k.private.v1;
+package private.v1;
 
 import "google/protobuf/descriptor.proto";
 
-option go_package = "github.com/kostyay/protoc-gen-go-private/protos/private/v1;privatev1";
+option go_package = "github.com/kostyay/protoc-gen-go-private/private/v1;privatev1";
 
 // MethodOption authorization rule for endpoint
 message FieldOption {
