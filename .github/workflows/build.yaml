@@ -34,10 +34,10 @@ jobs:
       - name: buf
         uses: bufbuild/buf-setup-action@v1
         with:
-          version: '0.57.0'
-      - name: buf lint
-        run: |
-          buf lint
-      - name: buf breaking
-        run: |
-          buf breaking --against-input '.git#branch=main'
+          version: 'latest'
+          github_token: ${{ github.token }}
+      - uses: bufbuild/buf-lint-action@v1
+      - uses: bufbuild/buf-breaking-action@v1
+        with:
+          # The 'main' branch of the GitHub repository that defines the module.
+          against: "https://github.com/${GITHUB_REPOSITORY}.git#branch=main"
