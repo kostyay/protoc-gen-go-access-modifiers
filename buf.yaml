@@ -6,3 +6,6 @@ breaking:
 lint:
   use:
     - DEFAULT
+build:
+  excludes:
+    - example
