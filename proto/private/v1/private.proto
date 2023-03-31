@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package k.private.v1;
+
+import "google/protobuf/descriptor.proto";
+
+option go_package = "github.com/kostyay/protoc-gen-go-private/protos/private/v1;privatev1";
+
+// MethodOption authorization rule for endpoint
+message FieldOption {
+  repeated bool private = 1;
+}
+
+extend google.protobuf.FieldOptions {
+  // See `MethodOption`.
+  FieldOption access = 7338839;
+}
