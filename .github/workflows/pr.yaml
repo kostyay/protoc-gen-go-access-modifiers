@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/setup-go@v4
         with:
-          go-version: '1.17'
+          go-version: '1.19'
           cache: false
       - uses: actions/checkout@v3
       - name: golangci-lint
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/setup-go@v4
         with:
-          go-version: '1.17'
+          go-version: '1.19'
           cache: false
       - uses: actions/checkout@v3
       - name: buf
@@ -37,3 +37,16 @@ jobs:
           version: 'latest'
           github_token: ${{ github.token }}
       - uses: bufbuild/buf-lint-action@v1
+
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '1.19'
+          cache: false
+      - uses: actions/checkout@v3
+      - name: build
+        run: |
+          make build
