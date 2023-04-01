@@ -2,23 +2,32 @@ syntax = "proto3";
 
 package example;
 
-import "private/v1/private.proto";
+import "access/v1/access.proto";
 
-option go_package = "github.com/kostyay/protoc-gen-go-private/example";
+option go_package = "github.com/kostyay/protoc-gen-go-access-modifiers/example;example";
+
+
+service ExampleService {
+  rpc PrivateHello (Hello) returns (Hello) {
+    option (access.v1.mo).private = true;
+  }
+
+  rpc PublicHello (Hello) returns (Hello);
+}
 
 message PrivateMessage {
   string password = 1;
 }
 
 message PartialPrivateMessage {
-  string password = 1 [(private.v1.access) = {private: true}];
+  string password = 1 [(access.v1.fo).private = true];
   string public_string = 2;
 }
 
 message Hello {
   string name = 1;
-  string private_string = 2 [(private.v1.access) = {private: true}];
-  int32 private_int = 3 [(private.v1.access) = {private: true}];
-  PrivateMessage private_message = 4 [(private.v1.access) = {private: true}];
+  string private_string = 2 [(access.v1.fo).private = true];
+  int32 private_int = 3 [(access.v1.fo).private = true];
+  PrivateMessage private_message = 4 [(access.v1.fo).private = true];
   PartialPrivateMessage partial_private_message = 5;
 }

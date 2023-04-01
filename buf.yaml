@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/kostyao/protoc-gen-go-private
+name: buf.build/kostyao/protoc-gen-go-access-modifiers
 breaking:
   use:
     - FILE

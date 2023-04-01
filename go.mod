@@ -1,4 +1,4 @@
-module github.com/kostyay/protoc-gen-go-private
+module github.com/kostyay/protoc-gen-go-access-modifiers
 
 go 1.19
 

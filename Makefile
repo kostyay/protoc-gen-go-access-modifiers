@@ -4,7 +4,7 @@ dependencies:
 
 .PHONY: build
 build:
-	@buf generate && go build -o ./bin/protoc-gen-go-private ./plugin/...
+	@buf generate && go build -o ./bin/protoc-gen-go-access-modifiers ./plugin/...
 
 .PHONY: clean
 clean:
