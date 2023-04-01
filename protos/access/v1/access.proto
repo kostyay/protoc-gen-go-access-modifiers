@@ -8,7 +8,7 @@ option go_package = "github.com/kostyay/protoc-gen-go-access-modifiers/pkg/acces
 
 // Define access modifiers for methods
 message MethodOption {
-  repeated bool private = 1;
+  bool private = 1;
 }
 
 extend google.protobuf.MethodOptions {
@@ -19,7 +19,7 @@ extend google.protobuf.MethodOptions {
 // Define access modifiers for fields
 // FieldOption access modifiers for fields
 message FieldOption {
-  repeated bool private = 1;
+  bool private = 1;
 }
 
 extend google.protobuf.FieldOptions {

@@ -4,6 +4,14 @@ package example
 
 import "github.com/kostyay/protoc-gen-go-access-modifiers/pkg/types"
 
+func (x *PublicHelloRequest) AsPublic() {
+}
+func (x *PublicHelloResponse) AsPublic() {
+}
+func (x *PrivateHelloRequest) AsPublic() {
+}
+func (x *PrivateHelloResponse) AsPublic() {
+}
 func (x *PrivateMessage) AsPublic() {
 }
 func (x *PartialPrivateMessage) AsPublic() {

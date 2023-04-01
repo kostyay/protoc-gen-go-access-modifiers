@@ -8,11 +8,26 @@ option go_package = "github.com/kostyay/protoc-gen-go-access-modifiers/example;e
 
 
 service ExampleService {
-  rpc PrivateHello (Hello) returns (Hello) {
+  rpc PrivateHello (PrivateHelloRequest) returns (PrivateHelloResponse) {
     option (access.v1.mo).private = true;
   }
 
-  rpc PublicHello (Hello) returns (Hello);
+  rpc PublicHello (PublicHelloRequest) returns (PublicHelloResponse);
+}
+
+message PublicHelloRequest {
+}
+
+message PublicHelloResponse {
+  string name = 1;
+}
+
+message PrivateHelloRequest {
+  string password = 1;
+}
+
+message PrivateHelloResponse {
+  string name = 1;
 }
 
 message PrivateMessage {
